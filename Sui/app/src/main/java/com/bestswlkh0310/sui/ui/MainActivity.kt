@@ -143,7 +143,7 @@ fun App() {
 
 fun ge(s: Int): String {
     return when (s) {
-        1 -> "홈"
+        1 -> "사회 서비스 분야"
         2 -> "검색"
         3 -> "인증"
         4 -> "MY"

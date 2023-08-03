@@ -43,6 +43,7 @@ class ComViewModel: ViewModel() {
         val requestBody = createRequestBodyFromBitmap(bitmap)
         return MultipartBody.Part.createFormData(partName, "image.jpg", requestBody)
     }
+
     fun upload(bitmap: Bitmap) {
         val imagePart: MultipartBody.Part = prepareImagePart(bitmap, "image")
 
@@ -51,7 +52,6 @@ class ComViewModel: ViewModel() {
             _state.value.copy(status = CamStatus.Complete)
             // todo:  state처리
         }
-
     }
 
     fun update() {

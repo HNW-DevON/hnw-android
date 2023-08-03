@@ -74,7 +74,7 @@ fun ComScreen(
             if (takenPhoto != null) {
                 image = takenPhoto
                  viewModel.update()
-//                viewModel.upload(takenPhoto)
+                viewModel.upload(takenPhoto)
             }
         }
 
