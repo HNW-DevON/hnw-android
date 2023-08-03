@@ -1,4 +1,4 @@
-package com.bestswlkh0310.sui.ui.theme.util
+package com.bestswlkh0310.sui.ui.util
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -8,6 +8,7 @@ class PreferenceManager(context: Context) {
         context.getSharedPreferences(MARU_APP, Context.MODE_PRIVATE)
 
     var isLogin: Boolean by PreferenceDelegate(Is_Login, true)
+    var a: String by PreferenceDelegate(A, "")
     fun delToken() {
 
     }
@@ -15,6 +16,7 @@ class PreferenceManager(context: Context) {
     companion object {
         const val MARU_APP = "MARU_APP"
         const val Is_Login = "REFRESH_TOKEN"
+        const val A = "a"
     }
 
     private inner class PreferenceDelegate<T>(

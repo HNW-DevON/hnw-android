@@ -1,4 +1,4 @@
-package com.bestswlkh0310.sui.ui.theme.ui.theme
+package com.bestswlkh0310.sui.ui.theme
 
 import android.app.Activity
 import android.os.Build

@@ -1,17 +1,27 @@
 package com.bestswlkh0310.sui
 
+import android.util.Log
+import com.bestswlkh0310.sui.data.req.LoginRequest
+import com.bestswlkh0310.sui.data.RetrofitClient
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
-import org.junit.Assert.*
-
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
 class ExampleUnitTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun addition_isCorrect() = runBlocking {
+        val a = RetrofitClient.retrofit
+        val b = CoroutineScope(Dispatchers.IO).launch {
+            val d = a.login(
+                LoginRequest(
+                    id = "b",
+                    pw = "c"
+                )
+            )
+            Log.d("TAG", "${d.id}ExampleUnitTest - addition_isCorrect() called")
+        }
+        b.join()
     }
 }

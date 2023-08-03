@@ -1,5 +1,5 @@
 
-package com.bestswlkh0310.sui.ui.theme.util
+package com.bestswlkh0310.sui.ui.util
 
 import android.app.Application
 

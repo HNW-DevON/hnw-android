@@ -1,5 +1,11 @@
 package com.bestswlkh0310.sgx_components.component.set.tab
 
+import android.app.Application
+import android.graphics.Bitmap
+import android.util.Base64
+import android.util.Log
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -28,6 +34,7 @@ import com.bestswlkh0310.sgx_components.foundation.Text
 import com.bestswlkh0310.sgx_components.theme.SgxColor
 import com.bestswlkh0310.sgx_components.theme.SgxTheme
 import com.bestswlkh0310.sgx_components.theme.LocalContentColor
+import java.io.ByteArrayOutputStream
 
 sealed interface DividerPosition {
     object Top : DividerPosition
@@ -61,6 +68,7 @@ fun RowScope.SgxTab(
 ) {
 
     val contentColor = if (selected) {
+        // todo cam
         selectedColor
     } else {
         SgxTheme.color.Gray400
@@ -85,7 +93,7 @@ fun RowScope.SgxTab(
                     interactionSource = interactionSource,
                     indication = rememberRipple(
                         color = SgxTheme.color.Gray300,
-                        radius = 70.dp,
+                        radius = 50.dp,
                         bounded = true
                     ),
                 )
