@@ -21,7 +21,7 @@ import com.bestswlkh0310.sgx_components.theme.Title2
 
 @Composable
 fun HomeScreen() {
-    
+
     LazyColumn() {
 
     }

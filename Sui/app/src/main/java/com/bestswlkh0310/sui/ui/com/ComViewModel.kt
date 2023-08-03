@@ -49,8 +49,13 @@ class ComViewModel: ViewModel() {
 
         viewModelScope.launch {
             val response = RetrofitClient.retrofit.uploadImage(imagePart)
-            _state.value.copy(status = CamStatus.Complete)
-            // todo:  state처리
+            val a = response[0]
+            val b = response[1]
+            if (a.score > b.score) {
+                _state.value = _state.value.copy(name = a.label, hoak = a.score, status = CamStatus.Complete, no = true)
+            } else {
+                _state.value = _state.value.copy(name = b.label, hoak = b.score, status = CamStatus.Complete, no = true)
+            }
         }
     }
 

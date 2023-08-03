@@ -18,7 +18,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -56,13 +55,13 @@ fun ComScreen(
             CamStatus.Complete -> {
                 if (state.value.no) {
                     if (image != null) {
-                        No(image!!)
+                        No(image!!, state.value.name, state.value.hoak)
                     } else {
                         Loading()
                     }
                 } else {
                     if (image != null) {
-                        Yes(image!!, "123", 100.0f)
+                        Yes(image!!, state.value.name, state.value.hoak)
                     } else {
                         Loading()
                     }
@@ -109,7 +108,7 @@ fun Loading() {
 }
 
 @Composable
-fun No(image: Bitmap) {
+fun No(image: Bitmap, name: String, hoak: Float) {
     Surface(
         modifier = Modifier
             .fillMaxSize()
@@ -136,6 +135,12 @@ fun No(image: Bitmap) {
                     ) {
                         Image(bitmap = image.asImageBitmap(), contentDescription = null, modifier = Modifier.fillMaxSize())
                     }
+                }
+                Row(Modifier.fillMaxWidth(), Arrangement.Center) {
+                    Title1(text = name)
+                }
+                Row(Modifier.fillMaxWidth(), Arrangement.Center) {
+                    Body1(text = "정확도: ${(hoak * 10000).toInt() / 100}%")
                 }
             }
             Row(
@@ -186,7 +191,7 @@ fun Yes(image: Bitmap, name: String, hoak: Float) {
                     Title1(text = name)
                 }
                 Row(Modifier.fillMaxWidth(), Arrangement.Center) {
-                    Body1(text = "정확도: ${hoak}%")
+                    Body1(text = "정확도: ${(hoak * 10000).toInt() / 100}%")
                 }
             }
             Row(

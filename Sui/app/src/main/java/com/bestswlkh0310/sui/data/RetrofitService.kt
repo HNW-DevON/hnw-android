@@ -1,5 +1,6 @@
 package com.bestswlkh0310.sui.data
 
+import com.bestswlkh0310.sui.data.req.ComResponse
 import com.bestswlkh0310.sui.data.req.JoinRequest
 import com.bestswlkh0310.sui.data.req.LoginRequest
 import com.bestswlkh0310.sui.data.res.LoginResponse
@@ -28,5 +29,5 @@ interface RetrofitService {
     @POST("/search")
     suspend fun uploadImage(
         @Part image: MultipartBody.Part,
-    ): Unit
+    ): List<ComResponse>
 }
