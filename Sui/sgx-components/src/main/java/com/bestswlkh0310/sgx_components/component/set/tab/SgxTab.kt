@@ -84,9 +84,9 @@ fun RowScope.SgxTab(
                     role = Role.Tab,
                     interactionSource = interactionSource,
                     indication = rememberRipple(
-                        color = Color.Unspecified,
-                        radius = 30.dp,
-                        bounded = false
+                        color = SgxTheme.color.Gray300,
+                        radius = 70.dp,
+                        bounded = true
                     ),
                 )
         ) {
@@ -135,7 +135,7 @@ private fun LabelOnly(
     ) {
         Text(
             modifier = Modifier
-                .padding(vertical = 16.dp)
+                .padding(vertical = 14.dp)
                 .align(Alignment.CenterHorizontally),
             text = text,
             style = if (selected) selectedStyle else unSelectStyle,

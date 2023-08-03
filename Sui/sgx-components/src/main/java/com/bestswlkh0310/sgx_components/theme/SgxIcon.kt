@@ -64,6 +64,22 @@ fun IcCheck(
     )
 }
 
+
+@Composable
+fun IcDefault(
+    contentDescription: String?,
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+    id: Int
+) {
+    Icon(
+        painter = painterResource(id = id),
+        contentDescription = contentDescription,
+        modifier = modifier,
+        tint = tint
+    )
+}
+
 @Composable
 fun IcHome(
     contentDescription: String?,
