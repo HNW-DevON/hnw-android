@@ -53,4 +53,5 @@ class JoinViewModel: ViewModel() {
 
         }
     }
+
 }
