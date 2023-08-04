@@ -238,6 +238,7 @@ fun Label1(
     textOverflow: TextOverflow = TextOverflow.Clip,
     softWrap: Boolean = true,
     maxLines: Int = Int.MAX_VALUE,
+    style: TextStyle = SgxTypography.label1,
     onTextLayout: (TextLayoutResult) -> Unit = {},
     onClick: (() -> Unit)? = null,
 ) {
@@ -246,7 +247,7 @@ fun Label1(
             onClick = onClick,
         ),
         text = text,
-        style = SgxTypography.label1,
+        style = style,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,

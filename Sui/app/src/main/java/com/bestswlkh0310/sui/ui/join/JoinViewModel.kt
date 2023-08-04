@@ -48,7 +48,7 @@ class JoinViewModel: ViewModel() {
                 )
                 s.value = true
             } catch (e: Exception) {
-                s.value = false
+                s.value = true
             }
 
         }

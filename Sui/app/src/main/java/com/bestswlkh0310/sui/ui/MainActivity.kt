@@ -43,6 +43,7 @@ import com.bestswlkh0310.sui.ui.com.ComScreen
 import com.bestswlkh0310.sui.ui.home.HomeScreen
 import com.bestswlkh0310.sui.ui.my.MyScreen
 import com.bestswlkh0310.sui.ui.onboard.OnBoardScreen
+import com.bestswlkh0310.sui.ui.search.SearchScreen
 import com.bestswlkh0310.sui.ui.util.Application
 import com.bestswlkh0310.sui.ui.util.PreferenceManager
 
@@ -57,11 +58,11 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Application.prefs = PreferenceManager(applicationContext)
 
-                    var isLogin by remember { mutableStateOf(true)/*mutableStateOf(Application.prefs.isLogin)*/ }
+                    var isLogin by remember { mutableStateOf(false)/*mutableStateOf(Application.prefs.isLogin)*/ }
                     if (isLogin) {
                         App()
                     } else {
-                        OnBoardScreen() {
+                        OnBoardScreen {
                             isLogin = true
                         }
                     }
@@ -111,7 +112,7 @@ fun App() {
             if (selectedTab.value == 1) {
                 HomeScreen()
             } else if (selectedTab.value == 2) {
-                HomeScreen()
+                SearchScreen()
             } else if (selectedTab.value == 3) {
                 ComScreen()
             } else if (selectedTab.value == 4) {

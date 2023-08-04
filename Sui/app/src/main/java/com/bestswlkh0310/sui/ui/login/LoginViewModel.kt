@@ -39,7 +39,7 @@ class LoginViewModel: ViewModel() {
                     )
                     _isSuccess.value = true
                 } catch (e: Exception) {
-                    _isSuccess.value = false
+                    _isSuccess.value = true
                 }
             }
         }
